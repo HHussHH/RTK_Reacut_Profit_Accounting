@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import { Profile } from "./Profile";
+import { CardItem } from "./CardItem";
 
 const CardUI = styled.div`
-  margin: 0 auto;
-  width: 540px;
-  height: auto;
+  width: 536px;
+  height: 657px;
 `;
 export const Card = () => {
-  return <CardUI>Card</CardUI>;
+  return (
+    <CardUI>
+      <Profile />
+      <CardItem />
+    </CardUI>
+  );
 };
