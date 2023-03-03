@@ -9,6 +9,11 @@ const CardItemUI = styled.div`
   background-color: #fffcf7;
   border-radius: 10px;
   padding: 32px 37px;
+
+  @media (max-width: 375px) {
+    padding: 10px 7px;
+    height: 456px;
+  } ;
 `;
 
 const CardItemTitile = styled.div`
@@ -37,6 +42,10 @@ const CardItemSystem = styled.h4`
     color: var(--colors-mediumBrown);
     font-weight: var(--fw-normal);
   }
+
+  @media (max-width: 375px) {
+    margin-right: 17px;
+  } ;
 `;
 
 const CardItemColumn = styled.div`
@@ -52,6 +61,10 @@ const CardItemColumn = styled.div`
   &:hover {
     background-color: #ff9b87;
   }
+
+  @media (max-width: 375px) {
+    width: 30px;
+  } ;
 `;
 
 const CardAmountInfo = styled.div`
@@ -63,6 +76,11 @@ const CardAmountInfo = styled.div`
   top: -30px;
   font-weight: var(--fw-normal);
   background-color: var(--colors-darkBrown);
+
+  @media (max-width: 375px) {
+    padding: 0px;
+    font-size: 14px;
+  } ;
 `;
 
 export const CardItem = () => {

@@ -5,12 +5,10 @@ import { useDispatch } from "react-redux";
 import data from "./data.json";
 import { addInfo } from "./fetures/days/days-slice";
 const Container = styled.div`
-  width: 1440px;
-  height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 function App() {
   const dispatch = useDispatch();
