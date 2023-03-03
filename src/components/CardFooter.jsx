@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { useSelector } from "react-redux";
 const CardFooterUi = styled.footer`
   margin-top: 37px;
   display: flex;
@@ -21,11 +21,17 @@ const CardFooterPrice = styled.h2`
   font-weight: var(--fw-bold);
 `;
 export const CardFooter = () => {
+  var total = 0;
+  const FullAmount = useSelector((state) => state.daysReducer);
+  FullAmount.map((amount) => {
+    return (total += amount.amount);
+  });
+
   return (
     <CardFooterUi>
       <div>
         <CardFooterText>Total his month</CardFooterText>
-        <CardFooterPrice>$478.33</CardFooterPrice>
+        <CardFooterPrice>${total}</CardFooterPrice>
       </div>
       <div>
         <CardFooterText>
