@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { CardFooter } from "./CardFooter";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleDay } from "../fetures/days/days-slice";
+
 const CardItemUI = styled.div`
   width: 100%;
   height: 506px;
@@ -41,10 +43,10 @@ const CardItemColumn = styled.div`
   width: 52px;
   max-height: 150px;
   background-color: var(--colors-red);
-
+  margin-top: 2px;
   border-radius: 5px;
   margin-bottom: 15px;
-
+  position: relative;
   cursor: pointer;
 
   &:hover {
@@ -52,18 +54,41 @@ const CardItemColumn = styled.div`
   }
 `;
 
+const CardAmountInfo = styled.div`
+  color: #fff;
+  font-size: 14px;
+  padding: 2px 10px;
+  border-radius: 4px;
+  position: absolute;
+  top: -30px;
+  font-weight: var(--fw-normal);
+  background-color: var(--colors-darkBrown);
+`;
+
 export const CardItem = () => {
+  const dispatch = useDispatch();
   const days = useSelector((state) => state.daysReducer);
 
-  console.log(days);
   return (
     <CardItemUI>
       <CardItemTitile>Spending - Last {days.length} days</CardItemTitile>
       <CardItemStatistics>
         {days.map((day) => {
           return (
-            <CardItemSystem key={day.day}>
-              <CardItemColumn style={{ height: `${day.amount * 2}px` }} />
+            <CardItemSystem
+              key={day.day}
+              onClick={() => dispatch(toggleDay(day.day))}
+            >
+              <CardItemColumn
+                style={{
+                  height: `${day.amount * 2}px`,
+                  backgroundColor: day.isActive ? "#76B5BC" : "#EC755D",
+                }}
+              >
+                {day.isActive ? (
+                  <CardAmountInfo>${day.amount}</CardAmountInfo>
+                ) : null}
+              </CardItemColumn>
               <p>{day.day}</p>
             </CardItemSystem>
           );
