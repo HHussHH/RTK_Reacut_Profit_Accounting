@@ -6,7 +6,7 @@ const CardUI = styled.div`
   width: 536px;
   height: 657px;
 
-  @media (max-width: 375px) {
+  @media (max-width: 500px) {
     width: 340px;
     height: auto;
   } ;

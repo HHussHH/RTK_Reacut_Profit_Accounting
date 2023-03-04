@@ -9,6 +9,12 @@ const Container = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 500px) {
+    top: 20%;
+    left: 30%;
+    transform: translate(-30%, -20%);
+  }
 `;
 function App() {
   const dispatch = useDispatch();

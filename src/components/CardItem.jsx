@@ -10,8 +10,8 @@ const CardItemUI = styled.div`
   border-radius: 10px;
   padding: 32px 37px;
 
-  @media (max-width: 375px) {
-    padding: 10px 7px;
+  @media (max-width: 500px) {
+    padding: 10px 6px;
     height: 456px;
   } ;
 `;
@@ -43,7 +43,7 @@ const CardItemSystem = styled.h4`
     font-weight: var(--fw-normal);
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 500px) {
     margin-right: 17px;
   } ;
 `;
@@ -62,7 +62,7 @@ const CardItemColumn = styled.div`
     background-color: #ff9b87;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 500px) {
     width: 30px;
   } ;
 `;
@@ -77,7 +77,7 @@ const CardAmountInfo = styled.div`
   font-weight: var(--fw-normal);
   background-color: var(--colors-darkBrown);
 
-  @media (max-width: 375px) {
+  @media (max-width: 500px) {
     padding: 0px;
     font-size: 14px;
   } ;
